@@ -1,0 +1,90 @@
+.about-section {
+  background-color: var(--light-bg);
+}
+
+.about-content {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.section-title.left-align {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.about-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: var(--secondary);
+}
+
+.about-text p {
+  margin-bottom: 30px;
+  color: var(--text);
+}
+
+.btn-about {
+  margin-bottom: 40px;
+}
+
+.certifications h4 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--secondary);
+}
+
+.cert-badges {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 10px 20px;
+  border: 1px dashed var(--primary);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.about-image {
+  flex: 1;
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.image-caption {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  max-width: 300px;
+  font-size: 0.9rem;
+  color: var(--text);
+  border-left: 4px solid var(--primary);
+}
+
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .image-caption {
+    right: 0;
+    bottom: 0;
+  }
+}

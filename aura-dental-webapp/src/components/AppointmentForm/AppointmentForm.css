@@ -1,0 +1,283 @@
+.appointment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.appointment-modal {
+  background: var(--white);
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border-bottom: 2px solid var(--primary);
+  background: linear-gradient(135deg, rgba(125, 207, 227, 0.1), rgba(167, 228, 242, 0.05));
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: var(--secondary);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.close-btn:hover {
+  background: rgba(125, 207, 227, 0.1);
+  color: var(--primary);
+}
+
+.appointment-form {
+  padding: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 15px;
+  border: 2px solid var(--border-light);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(125, 207, 227, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  color: var(--text);
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237DCFE3' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 35px;
+  background-color: var(--white);
+}
+
+.form-group select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.date-input-wrapper,
+.time-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.date-input-wrapper input,
+.time-input-wrapper select {
+  width: 100%;
+  padding-left: 40px;
+}
+
+.date-input-wrapper svg,
+.time-input-wrapper svg {
+  position: absolute;
+  left: 12px;
+  color: var(--primary);
+  pointer-events: none;
+}
+
+.input-wrapper,
+.date-input-wrapper,
+.time-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input,
+.input-wrapper select,
+.input-wrapper textarea {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 40px;
+}
+
+.input-wrapper.valid input,
+.input-wrapper.valid select,
+.input-wrapper.valid textarea,
+.date-input-wrapper.valid input,
+.time-input-wrapper.valid select {
+  border-color: #22c55e;
+  background-color: #f0fdf4;
+}
+
+.input-wrapper.invalid input,
+.input-wrapper.invalid select,
+.input-wrapper.invalid textarea,
+.date-input-wrapper.invalid input,
+.time-input-wrapper.invalid select {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.icon-valid {
+  position: absolute;
+  right: 12px;
+  color: #22c55e;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.icon-valid-textarea {
+  right: 12px;
+  top: 12px;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.error-message svg {
+  flex-shrink: 0;
+}
+
+.date-input-wrapper.valid svg,
+.time-input-wrapper.valid svg {
+  color: #22c55e;
+}
+
+.date-input-wrapper.invalid svg,
+.time-input-wrapper.invalid svg {
+  color: #ef4444;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover:not(:disabled) {
+  box-shadow: 0 8px 20px rgba(125, 207, 227, 0.4);
+}
+
+.btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+.char-count {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin-top: 5px;
+  text-align: right;
+}
+
+.char-count.warning {
+  color: #ef4444;
+}
+
+@media (max-width: 576px) {
+  .appointment-modal {
+    max-height: calc(100vh - 20px);
+  }
+
+  .modal-header {
+    padding: 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .appointment-form {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+}

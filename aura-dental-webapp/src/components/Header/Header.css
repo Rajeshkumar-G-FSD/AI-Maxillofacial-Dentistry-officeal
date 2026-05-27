@@ -1,0 +1,183 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.logo-text {
+  display: none;
+}
+
+.logo-text span {
+  font-weight: 300;
+}
+
+.header.scrolled .logo-text {
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.header.scrolled .nav-links a {
+  color: #000;
+}
+
+.nav-links a:hover,
+.header.scrolled .nav-links a:hover {
+  color: var(--primary);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.header.scrolled .action-btn {
+  border-color: var(--border-light);
+  color: var(--text);
+}
+
+.action-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.header.scrolled .btn-appointment {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.doctor-login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 8px 14px;
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--primary);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.doctor-login-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(125, 207, 227, 0.35);
+}
+
+.header.scrolled .doctor-login-btn {
+  background: var(--white);
+  color: var(--secondary);
+  border-color: var(--border-light);
+}
+
+.header.scrolled .doctor-login-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-appointment {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 10px 20px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .doctor-login-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0;
+  }
+
+  .btn-appointment {
+    padding: 10px 14px;
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .action-btn {
+    display: none;
+  }
+
+  .btn-appointment {
+    max-width: 150px;
+    line-height: 1.15;
+  }
+}

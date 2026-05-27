@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "aura-dental-webapp/dist",
+  "installCommand": "cd aura-dental-webapp && npm install",
+  "framework": "vite",
+  "rootDirectory": "aura-dental-webapp"
+}
